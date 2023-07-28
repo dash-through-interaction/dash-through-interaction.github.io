@@ -25,7 +25,6 @@
   <meta property="og:image:width" content="1600" />
   <meta property="og:image:height" content="900" />
 
-  <script src="https://www.youtube.com/iframe_api"></script>
   <meta name="twitter:card" content="player" />
   <meta name="twitter:image" content="./resources/teaser.png" />
   <meta name="twitter:player" content="" />
@@ -49,11 +48,11 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
 
   <meta property="og:image:width" content="1600" />
   <meta property="og:image:height" content="900" />
 
-  <script src="https://www.youtube.com/iframe_api"></script>
   <meta name="twitter:card" content="player" />
   <meta name="twitter:image" content="./resources/crop_method.png" />
   <meta name="twitter:player:width" content="640" />
@@ -70,9 +69,9 @@
           <h1 class="title is-1 publication-title">DASH:</h1><h2 class = "title is-34 publication-title">A Framework for Designing Anthropomorphic Soft Hands through Interaction</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Anonymous RSS Submission
+              Anonymous IEEE Humanoids Submission
               <br>
-              Paper ID: 248
+              Paper ID: 30
             </span>
           </div>
 
@@ -109,8 +108,8 @@
 
 <section class="hero teaser">
   <div class="content has-text-centered">
-      <video width="960" height="720" loop muted controls picture-in-picture>
-        <source src="./resources/index.mp4" type="video/mp4">
+      <video width="960" height="720" loop muted controls picture-in-picture id="teaser">
+        <source src="./resources/index.mp4" type="video/mp4" >
       </video>
     </div>
 </section>
@@ -124,7 +123,7 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p style = "font-size: 20px">
-            Modeling and simulating soft robot hands can aid in design iteration for complex and high degree-of-freedom (DoF) morphologies. This can be further supplemented by iterating on the design based on its performance in real world manipulation tasks.However, this requires a framework that allows us to iterate quickly at low costs. In this paper, we present a framework that leverages rapid prototyping of the hand using 3D-printing, and utilizes teleoperation to evaluate the hand in real world manipulation tasks.  Using this framework, we design a 3D-printed 16-DoF dexterous anthropomorphic soft hand (DASH) and iteratively improve its design over three iterations. Rapid prototyping techniques such as 3D-printing allow us to directly evaluate the fabricated hand without modeling it in simulation. We show that the design is improved at each iteration through the hand's performance in 30 real-world teleoperated manipulation tasks. Testing over 600 demonstrations shows that our final version of DASH can solve 16 of the 30 tasks compared to Allegro, a popular rigid hand in the market, that can only solve 7 tasks. We open source our CAD models as well as the teleoperated dataset for further study and are available on our website https://dash-through-interaction.github.io.
+            Modeling and simulating soft robot hands can aid in design iteration for complex and high degree-of-freedom (DoF) morphologies. This can be further supplemented by iterating on the design based on its performance in real world manipulation tasks. However, iterating in the real world requires a framework that allows us to test new designs quickly at low costs. In this paper, we present a framework that leverages rapid prototyping of the hand using 3D-printing, and utilizes teleoperation to evaluate the hand in real world manipulation tasks.  Using this framework, we design a 3D-printed 16-DoF dexterous anthropomorphic soft hand (DASH) and iteratively improve its design over five iterations. Rapid prototyping techniques such as 3D-printing allow us to directly evaluate the fabricated hand without modeling it in simulation. We show that the design improves over five design iterations through evaluating the hand’s performance in 30 real-world teleoperated manipulation tasks. Testing over 900 demonstrations shows that our final version of DASH can solve 19 of the 30 tasks compared to Allegro, a popular rigid hand in the market, which can only solve 7 tasks. We open-source our CAD models as well as the teleoperated dataset for further study.
           </p>
           </div>
       </div>
@@ -138,12 +137,125 @@
   <br> -->
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Task Videos</bold></h3>
+        
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Scissor.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>Scissor</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Pen.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>Pen</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Drill.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>Drill</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/M&M.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>M&M</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Softball.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>Softball</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Dino.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                         <center><h5>Plush Dinosaur</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Mustard.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Mustard</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Cubeflip.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Cube Flip</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Grape.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Grape off of Stem</h5></center>
+                  <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Pouring.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Cup Pouring</h5></center>
+              </div>
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Hammer.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+                       <center><h5>Hammer</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Cylinder.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+                      <center><h5>Wooden Cylinder</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Egg.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Egg</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Dryerase.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Dry Erase</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Cloth.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Cloth</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Pringles.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Pringles Can</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Wine.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Wine Glass</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Card.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Card Pickup From Deck</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Plasticbag.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Plastic Bag</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Stacking.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Cup Stacking and Unstacking</h5></center>
+              </div>
+              <div class="col">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Chopstick.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Chopsticks</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Screwdriver.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Screwdriver</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Chip.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Chip</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Tennisball.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Tennis Ball</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Broccoli.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Plush Broccoli</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Spam.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Spam Box</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Binpick.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Bin Picking</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Dice.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Dice Rotation In Hand</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Drawer.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>Drawer</h5></center>
+                <video class="center" playsinline autoplay loop muted src="./resources/task_videos/Blocks.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                      <center><h5>1 in. Block Stacking</h5></center>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a href="./resources/CoRL-Energy-Locomotion.pdf" class="large-font bottom_buttons">
+      <!-- <a href="./resources/CoRL-Energy-Locomotion.pdf" class="large-font bottom_buttons">
         <i class="fas fa-file-pdf"></i>
-      </a>
+      </a> -->
       <!-- <a class="large-font bottom_buttons" disabled>
         <i class="fab fa-github"></i>
       </a> -->
@@ -152,6 +264,16 @@
     </div>
   </div>
 </footer>
-
+<script>
+  var mainLoopId = setInterval(function(){
+    $('video').not('#teaser').each(function(){
+  if ($(this).is(":in-viewport")) {
+      $(this)[0].play();
+  } else {
+      $(this)[0].pause();
+  }
+  })
+},200);
+</script>
 </body>
 </html>
